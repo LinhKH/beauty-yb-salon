@@ -44,9 +44,8 @@ class Yb_AppointmentController extends Controller
                 })
                 ->editColumn('services', function ($row) {
                     $service1 = '';
-                    foreach($row?->services as $service) {
-                        $service1 .= $service->service_name->title .' - ';
-
+                    foreach ($row?->services as $service) {
+                        $service1 .= $service->service_name->title . ' - ';
                     }
                     return $service1;
                     // return $row->services->count();

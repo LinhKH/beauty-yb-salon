@@ -14,9 +14,9 @@ $(function () {
         }
     });
 
-    $('.modal').on('hidden.bs.modal', function(e) {
+    $('.modal').on('hidden.bs.modal', function (e) {
         $(this).find('form')[0].reset();
-      });
+    });
 
     $('.change-logo').click(function () {
         $('.change-com-img').click();
@@ -79,21 +79,20 @@ $(function () {
         });
     });
 
-  
     // ========================================
     // script for Services module
     // ========================================
     $('#addService').validate({
-        rules: { 
-            title: { required: true }, 
-            price: { required: true }, 
-            duration: { required: true }, 
-            space: { required: true }, 
+        rules: {
+            title: { required: true },
+            price: { required: true },
+            duration: { required: true },
+            space: { required: true },
         },
-        messages: { 
-            title: { required: "Please Enter Service Title" }, 
-            price: { required: "Please Enter Service Price" }, 
-            duartion: { required: "Please Enter Service Duration" }, 
+        messages: {
+            title: { required: "Please Enter Service Title" },
+            price: { required: "Please Enter Service Price" },
+            duartion: { required: "Please Enter Service Duration" },
         },
         submitHandler: function (form) {
             var formdata = new FormData(form);
@@ -105,7 +104,6 @@ $(function () {
                 processData: false,
                 contentType: false,
                 success: function (dataResult) {
-                   console.log(dataResult);
                     if (dataResult == '1') {
                         Toast.fire({
                             icon: 'success',
@@ -123,14 +121,14 @@ $(function () {
 
     $('#updateService').validate({
         rules: {
-            title: { required: true }, 
-            price: { required: true }, 
-            duration: { required: true }, 
+            title: { required: true },
+            price: { required: true },
+            duration: { required: true },
             status: { required: true },
         },
         messages: {
-            title: { required: "Please Enter Service Title Name" }, 
-            price: { required: "Please Enter Service Price Name" }, 
+            title: { required: "Please Enter Service Title Name" },
+            price: { required: "Please Enter Service Price Name" },
             duartion: { required: "Please Enter Service Duration Name" },
             status: { required: "Please Enter Status" },
         },
@@ -164,26 +162,26 @@ $(function () {
         destroy_data($(this), 'services/')
     });
 
-    $('#showService').submit(function(e){
+    $('#showService').submit(function (e) {
         e.preventDefault();
         var show = [];
-        $('.service').each(function(i){
+        $('.service').each(function (i) {
             var id = $(this).attr('id');
-            if($('#'+id).prop('checked') == true){
+            if ($('#' + id).prop('checked') == true) {
                 show[i] = [
-                    $(this).val(),1   
+                    $(this).val(), 1
                 ];
-            }else{
+            } else {
                 show[i] = [
-                    $(this).val(),0   
+                    $(this).val(), 0
                 ];
             }
         })
-       
+
         $.ajax({
             url: uRL + '/admin/services/homepage_services',
             type: 'POST',
-            data: {show:show},
+            data: { show: show },
             success: function (dataResult) {
                 if (dataResult == '1') {
                     Toast.fire({
@@ -194,7 +192,7 @@ $(function () {
                 }
             },
         });
-        
+
     });
 
     // ========================================
@@ -203,9 +201,9 @@ $(function () {
 
     $('#addTestimonial').validate({
         rules: {
-           user_name: { required: true },
-           message: { required: true },
-           rating: { required: true },
+            user_name: { required: true },
+            message: { required: true },
+            rating: { required: true },
         },
         submitHandler: function (form) {
             var formdata = new FormData(form);
@@ -241,7 +239,7 @@ $(function () {
             var id = $('.id').val();
             var formdata = new FormData(form);
             $.ajax({
-                url: uRL + '/admin/testimonials/'+id,
+                url: uRL + '/admin/testimonials/' + id,
                 type: 'POST',
                 data: formdata,
                 processData: false,
@@ -307,10 +305,11 @@ $(function () {
                             icon: 'success',
                             title: 'Updated Succesfully.',
                         });
-                        setTimeout(function () { 
-                           // $('.loader-container').remove();
-                            window.location.href = uRL + '/admin/general-settings'; }, 1000);
-                    }else if (dataResult == '0') {
+                        setTimeout(function () {
+                            // $('.loader-container').remove();
+                            window.location.href = uRL + '/admin/general-settings';
+                        }, 1000);
+                    } else if (dataResult == '0') {
                         Toast.fire({
                             icon: 'info',
                             title: 'Already Updated.',
@@ -400,7 +399,7 @@ $(function () {
     //     }
     // });
 
-     // ========================================
+    // ========================================
     // script for Banner Setting module
     // ========================================
 
@@ -448,7 +447,7 @@ $(function () {
             var id = $('.id').val();
             var formdata = new FormData(form);
             $.ajax({
-                url: uRL + '/admin/banner-slider/'+id,
+                url: uRL + '/admin/banner-slider/' + id,
                 type: 'POST',
                 data: formdata,
                 processData: false,
@@ -493,7 +492,7 @@ $(function () {
                             title: 'Updated Succesfully.'
                         });
                         setTimeout(function () { window.location.href = uRL + '/admin/social-settings'; }, 1000);
-                    }else if (dataResult == '0') {
+                    } else if (dataResult == '0') {
                         Toast.fire({
                             icon: 'info',
                             title: 'Already Updated.'
@@ -515,7 +514,7 @@ $(function () {
         rules: {
             password: { required: true },
             new: { required: true },
-            new_confirm: { required: true,equalTo: '#password' },
+            new_confirm: { required: true, equalTo: '#password' },
         },
         submitHandler: function (form) {
             var id = $('.url').val();
@@ -533,7 +532,7 @@ $(function () {
                             title: 'Updated Succesfully.'
                         });
                         setTimeout(function () { window.location.href = uRL + '/admin/profile-settings'; }, 1000);
-                    }else{
+                    } else {
                         Toast.fire({
                             icon: 'error',
                             title: dataResult
@@ -551,17 +550,17 @@ $(function () {
     // script for Agent module
     // ========================================
     $('#addAgent').validate({
-        rules: { 
-            name: { required: true }, 
+        rules: {
+            name: { required: true },
             service: { required: true },
-            description: { required: true }, 
-            experience: { required: true }, 
+            description: { required: true },
+            experience: { required: true },
         },
-        messages: { 
-            name: { required: "Please Enter Agent Name" }, 
-            service: { required: "Please Enter Agent Service Name" }, 
-            description: { required: "Please Enter Agent Description Name" }, 
-            experience: { required: "Please Enter Agent Experience Name" }, 
+        messages: {
+            name: { required: "Please Enter Agent Name" },
+            service: { required: "Please Enter Agent Service Name" },
+            description: { required: "Please Enter Agent Description Name" },
+            experience: { required: "Please Enter Agent Experience Name" },
         },
         submitHandler: function (form) {
             var formdata = new FormData(form);
@@ -572,7 +571,7 @@ $(function () {
                 processData: false,
                 contentType: false,
                 success: function (dataResult) {
-                   // console.log(dataResult);
+                    // console.log(dataResult);
                     if (dataResult == '1') {
                         Toast.fire({
                             icon: 'success',
@@ -592,13 +591,13 @@ $(function () {
         rules: {
             name: { required: true },
             description: { required: true },
-            experience: { required: true }, 
+            experience: { required: true },
             status: { required: true },
         },
         messages: {
             name: { required: "Please Enter Agent Name" },
             description: { required: "Please Enter Agent Description" },
-            experience: { required: "Please Enter Agent Experience" }, 
+            experience: { required: "Please Enter Agent Experience" },
             status: { required: "Please Enter Status" },
         },
         submitHandler: function (form) {
@@ -631,7 +630,7 @@ $(function () {
         destroy_data($(this), 'agents/')
     });
 
-     // ========================================
+    // ========================================
     // script for GalleryCategory module
     // ========================================
 
@@ -717,15 +716,15 @@ $(function () {
     // script for Gallery Image module
     // ========================================
     $('#addGalleryImg').validate({
-        rules: { 
-            title: { required: true }, 
-            category: { required: true }, 
-            description: { required: true }, 
+        rules: {
+            title: { required: true },
+            category: { required: true },
+            description: { required: true },
         },
-        messages: { 
-            title: { required: "Please Enter Gallery Image Name" }, 
-            category: { required: "Please Enter Gallery Image Category" }, 
-            description: { required: "Please Enter Gallery Image Description" }, 
+        messages: {
+            title: { required: "Please Enter Gallery Image Name" },
+            category: { required: "Please Enter Gallery Image Category" },
+            description: { required: "Please Enter Gallery Image Description" },
         },
         submitHandler: function (form) {
             var formdata = new FormData(form);
@@ -753,20 +752,20 @@ $(function () {
 
     $("#updateGalleryImg").validate({
         rules: {
-            title: { required: true }, 
-            category: { required: true }, 
-            description: { required: true }, 
+            title: { required: true },
+            category: { required: true },
+            description: { required: true },
             status: { required: true },
         },
         messages: {
-            title: { required: "Please Enter Gallery Image Name" }, 
-            category: { required: "Please Enter Gallery Image Category" }, 
-            description: { required: "Please Enter Gallery Image Description" }, 
+            title: { required: "Please Enter Gallery Image Name" },
+            category: { required: "Please Enter Gallery Image Category" },
+            description: { required: "Please Enter Gallery Image Description" },
             status: { required: "Please Enter Gallery Image Status" },
         },
         submitHandler: function (form) {
             var id = $('.url').val();
-           // $('form').append(loader);
+            // $('form').append(loader);
             var formdata = new FormData(form);
             $.ajax({
                 url: id,
@@ -781,8 +780,9 @@ $(function () {
                             title: 'Updated Succesfully.',
                         });
                         setTimeout(function () {
-                          //  $('.loader-container').remove();
-                            window.location.href = uRL + '/admin/gallery_img'; }, 1000);
+                            //  $('.loader-container').remove();
+                            window.location.href = uRL + '/admin/gallery_img';
+                        }, 1000);
                     }
                 },
                 error: function (error) {
@@ -797,19 +797,18 @@ $(function () {
         destroy_data($(this), 'gallery_img/')
     });
 
-
-     // ========================================
+    // ========================================
     // script for Time Slot module
     // ========================================
 
     $('#addTimeSlot').validate({
-        rules: { 
-            from_time: { required: true }, 
-            to_time: { required: true }, 
+        rules: {
+            from_time: { required: true },
+            to_time: { required: true },
         },
-        messages: { 
-            from_time: { required: "Please Enter Start Time" }, 
-            to_time: { required: "Please Enter End Time" }, 
+        messages: {
+            from_time: { required: "Please Enter Start Time" },
+            to_time: { required: "Please Enter End Time" },
         },
         submitHandler: function (form) {
             var formdata = new FormData(form);
@@ -860,13 +859,13 @@ $(function () {
     });
 
     $("#editTimeSlot").validate({
-        rules: { 
-            from_time: { required: true }, 
-            to_time: { required: true }, 
+        rules: {
+            from_time: { required: true },
+            to_time: { required: true },
         },
-        messages: { 
+        messages: {
             from_time: { required: "Please Enter Start Time" },
-            to_time: { required: "Please Enter End Time" }, 
+            to_time: { required: "Please Enter End Time" },
         },
         submitHandler: function (form) {
             var id = $('#modal-info input[name=id]').val();
@@ -898,12 +897,11 @@ $(function () {
         destroy_data($(this), 'time_slot/')
     });
 
-
-     // ========================================
+    // ========================================
     // script for Page module
     // ========================================
     $('#addPage').validate({
-           rules: { title: { required: true }, },
+        rules: { title: { required: true }, },
         messages: { title: { required: "Please Enter Page Title Name" }, },
         submitHandler: function (form) {
             var url = $('.url').val();
@@ -963,39 +961,39 @@ $(function () {
         }
     });
 
-    $(document).on("click", ".delete-page", function (){
+    $(document).on("click", ".delete-page", function () {
         destroy_data($(this), 'pages/')
     });
 
-    $(document).on('click','.show-in-header',function(){
+    $(document).on('click', '.show-in-header', function () {
         var id = $(this).attr('id');
-        if($('#'+id).is(':checked')){
-           var status = 1;
-        }else{
+        if ($('#' + id).is(':checked')) {
+            var status = 1;
+        } else {
             var status = 0;
         }
-        id = id.replace('head','');
+        id = id.replace('head', '');
         $.ajax({
             url: uRL + '/admin/page_showIn_header',
             type: 'POST',
-            data: {id:id,status:status},
+            data: { id: id, status: status },
             success: function (dataResult) {
             }
         });
     })
 
-    $(document).on('click','.show-in-footer',function(){
+    $(document).on('click', '.show-in-footer', function () {
         var id = $(this).attr('id');
-        if($('#'+id).is(':checked')){
-           var status = 1;
-        }else{
+        if ($('#' + id).is(':checked')) {
+            var status = 1;
+        } else {
             var status = 0;
         }
-        id = id.replace('foot','');
+        id = id.replace('foot', '');
         $.ajax({
             url: uRL + '/admin/page_showIn_footer',
             type: 'POST',
-            data: {id:id,status:status},
+            data: { id: id, status: status },
             success: function (dataResult) {
             }
         });
@@ -1005,7 +1003,7 @@ $(function () {
         $('#modal-info').modal('show');
         var id = $(this).attr('data-id');
         $.ajax({
-            url: uRL + '/admin/contact/'  + id,
+            url: uRL + '/admin/contact/' + id,
             type: 'POST',
             success: function (dataResult) {
                 $('#modal-info .table').html(dataResult);
@@ -1013,18 +1011,14 @@ $(function () {
         });
     });
 
-
-
-
-
-    $('.add-service-row').click(function(){
+    $('.add-service-row').click(function () {
         var row_id = $(this).attr('data-id');
         row_id++;
-        $(this).attr('data-id',row_id);
+        $(this).attr('data-id', row_id);
         $.ajax({
             url: uRL + '/admin/appointment/get-service-row',
             type: 'POST',
-            data: {id:row_id},
+            data: { id: row_id },
             success: function (dataResult) {
                 console.log(dataResult);
                 $('.service-list tbody').append(dataResult);
@@ -1032,56 +1026,52 @@ $(function () {
         });
     })
 
-    $(document).on('click','.remove-service-row',function(){
+    $(document).on('click', '.remove-service-row', function () {
         $(this).parent().parent().remove();
     });
 
-    function grand_total(){
+    function grand_total() {
         var total = 0;
-        $('.serviceTotal').each(function(){
+        $('.serviceTotal').each(function () {
             var amt = parseInt($(this).text());
-            if($.isNumeric(amt)){
-                total = total+amt;
+            if ($.isNumeric(amt)) {
+                total = total + amt;
             }
         })
         $('.grandTotal').html(total);
     }
 
-    function service_total(id,price,qty){
-        $('#'+id).parent().siblings('td').children('.serviceTotal').html(price*qty);
+    function service_total(id, price, qty) {
+        $('#' + id).parent().siblings('td').children('.serviceTotal').html(price * qty);
         grand_total();
     }
 
-    
-
-
-    $(document).on('change','.serviceSelect',function(){
+    $(document).on('change', '.serviceSelect', function () {
         var id = $(this).attr('id');
-        var sid = $('#'+id+' option:selected').val();
-        var qty = $('#'+id).parent().siblings('td').children('.serviceQty').val();
+        console.log('serviceSelect', id);
+        var sid = $('#' + id + ' option:selected').val();
+        var qty = $('#' + id).parent().siblings('td').children('.serviceQty').val();
         $.ajax({
             url: uRL + '/admin/appointment/get-service-price',
             type: 'POST',
-            data: {sid:sid},
+            data: { sid: sid },
             success: function (price) {
-                $('#'+id).parent().siblings('td').children('.servicePrice').val(price);
-                service_total(id,price,qty);
+                $('#' + id).parent().siblings('td').children('.servicePrice').val(price);
+                service_total(id, price, qty);
             },
         });
     })
 
-    $(document).on('change','.serviceQty',function(){
+    $(document).on('keyup change', '.serviceQty', function () {
         var id = $(this).attr('id');
-        var qty = $('#'+id).val();
-        var price = $('#'+id).parent().siblings('td').children('.servicePrice').val();
-        service_total(id,price,qty);
+        console.log('serviceQty', id);
+        var qty = $('#' + id).val();
+        var price = $('#' + id).parent().siblings('td').children('.servicePrice').val();
+        service_total(id, price, qty);
     })
 
-    
-
-
     $('#addAppointment').validate({
-        rules: { 
+        rules: {
             c_name: { required: true },
             c_phone: { required: true },
             date: { required: true },
@@ -1090,7 +1080,7 @@ $(function () {
         submitHandler: function (form) {
             var formdata = new FormData(form);
             $.ajax({
-                url: uRL+'/admin/appointment',
+                url: uRL + '/admin/appointment',
                 type: 'POST',
                 data: formdata,
                 processData: false,
@@ -1112,7 +1102,7 @@ $(function () {
     });
 
     $('#updateAppointment').validate({
-        rules: { 
+        rules: {
             date: { required: true },
             time: { required: true },
         },
@@ -1120,7 +1110,7 @@ $(function () {
             var id = $('.app-id').val();
             var formdata = new FormData(form);
             $.ajax({
-                url: uRL+'/admin/appointment/'+id,
+                url: uRL + '/admin/appointment/' + id,
                 type: 'POST',
                 data: formdata,
                 processData: false,
@@ -1141,17 +1131,17 @@ $(function () {
         }
     });
 
-    $(document).on("click", ".delete-appointment", function (){
+    $(document).on("click", ".delete-appointment", function () {
         destroy_data($(this), 'appointment/')
     });
 
-    $(document).on('click','.change-appointment-status',function(){
+    $(document).on('click', '.change-appointment-status', function () {
         var id = $(this).attr('data-id');
 
         $.ajax({
-            url: uRL+'/admin/appointment/change_status',
+            url: uRL + '/admin/appointment/change_status',
             type: 'POST',
-            data: {id:id},
+            data: { id: id },
             success: function (dataResult) {
                 $('#changeAppointment-status .modal-body').html(dataResult);
                 $('#changeAppointment-status').modal('show');
@@ -1162,13 +1152,13 @@ $(function () {
         });
     })
 
-    $(document).on('click','.updateAppointment-status',function(){
+    $(document).on('click', '.updateAppointment-status', function () {
         var id = $('input[name=app_id]').val();
         var status = $('select[name=status] option:selected').val();
         $.ajax({
-            url: uRL+'/admin/appointment/update_status',
+            url: uRL + '/admin/appointment/update_status',
             type: 'POST',
-            data: {id:id,status:status},
+            data: { id: id, status: status },
             success: function (dataResult) {
                 if (dataResult == '1') {
                     Toast.fire({
@@ -1187,13 +1177,11 @@ $(function () {
         });
     })
 
-
-
     $("#updateClient").validate({
-        rules: { 
-            name: { required: true }, 
-            email: { required: true }, 
-            phone: { required: true },  
+        rules: {
+            name: { required: true },
+            email: { required: true },
+            phone: { required: true },
             //password: { required: true }, 
         },
         submitHandler: function (form) {
@@ -1211,7 +1199,7 @@ $(function () {
                             icon: 'success',
                             title: 'Updated Succesfully.'
                         });
-                        setTimeout(function () { window.location.href = uRL+'/admin/client'; }, 1000);
+                        setTimeout(function () { window.location.href = uRL + '/admin/client'; }, 1000);
                     }
                 },
                 error: function (error) {
@@ -1221,17 +1209,17 @@ $(function () {
         }
     });
 
-    $(document).on("click", ".delete-client", function (){
+    $(document).on("click", ".delete-client", function () {
         destroy_data($(this), 'client/')
     });
 
-    $(document).on('click','.client-status',function(){
+    $(document).on('click', '.client-status', function () {
         var id = $(this).attr('data-id');
         var status = $(this).attr('data-status');
         $.ajax({
-            url: uRL+'/admin/client/change_status',
+            url: uRL + '/admin/client/change_status',
             type: 'POST',
-            data: {id:id,status:status},
+            data: { id: id, status: status },
             success: function (dataResult) {
                 if (dataResult == '1') {
                     Toast.fire({
@@ -1254,14 +1242,14 @@ $(function () {
     // ========================================
     $('#update_payment_method').validate({
         rules: {
-            payment_name: {required: true},
-            payment_status: {required: true},
+            payment_name: { required: true },
+            payment_status: { required: true },
         },
         message: {
-            payment_name: {required: "Please Enter Payment Method Name"},
-            payment_status: {required: "Please Enter Payment Method Status"},
+            payment_name: { required: "Please Enter Payment Method Name" },
+            payment_status: { required: "Please Enter Payment Method Status" },
         },
-        submitHandler: function(form){
+        submitHandler: function (form) {
             var url = $('.url').val();
             var formdata = new FormData(form);
             $.ajax({
@@ -1270,13 +1258,13 @@ $(function () {
                 data: formdata,
                 processData: false,
                 contentType: false,
-                success: function(dataResult){
-                    if(dataResult == '1'){
+                success: function (dataResult) {
+                    if (dataResult == '1') {
                         Toast.fire({
                             icon: 'success',
                             title: 'Updated Successfully.'
                         });
-                        setTimeout(function(){ window.location.href = $('.rdt-url').val();}, 1000);
+                        setTimeout(function () { window.location.href = $('.rdt-url').val(); }, 1000);
                     }
                 },
                 error: function (error) {
@@ -1287,15 +1275,15 @@ $(function () {
     });
 
     //Payment Method Change Status
-    $(document).on('click','.paymentStatus',function(){
+    $(document).on('click', '.paymentStatus', function () {
         var id = $(this).attr('data-id');
         var status = $(this).attr('data-status');
         console.log(status);
         $.ajax({
-            url: uRL+'/admin/payment-method/status',
+            url: uRL + '/admin/payment-method/status',
             type: 'POST',
-            data: {payment_id:id,payment_status:status},
-            success: function(dataResult){
+            data: { payment_id: id, payment_status: status },
+            success: function (dataResult) {
                 console.log(dataResult);
                 location.reload();
             }
