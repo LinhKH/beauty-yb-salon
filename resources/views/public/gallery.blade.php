@@ -39,8 +39,8 @@
         <div class="row" id="galleryimages">
             @if($gallery->isNotEmpty())
             @foreach($gallery as $gimage)
-                <a href="{{asset('public/gallery/'.$gimage->image)}}" class="col-md-4 p-0 gallery-thumb card text-white">
-                    <img src="{{asset('public/gallery/'.$gimage->image)}}" alt="<h3>{{$gimage->title}}</h3><p>{{$gimage->description}}</p>">
+                <a href="{{asset('/gallery/'.$gimage->image)}}" class="col-md-4 p-0 gallery-thumb card text-white">
+                    <img src="{{asset('/gallery/'.$gimage->image)}}" alt="<h3>{{$gimage->title}}</h3><p>{{$gimage->description}}</p>">
                     <div class="card-img-overlay">
                         <h5 class="card-title">{{$gimage->title}}</h5>
                     </div>

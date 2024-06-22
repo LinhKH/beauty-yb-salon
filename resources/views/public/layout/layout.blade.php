@@ -18,7 +18,7 @@
                     <div class="d-flex mb-2 mb-sm-0 me-0 me-md-2 justify-content-between col-12 col-sm-auto">
                         <a class="navbar-brand" href="{{ url('/') }}">
                             @if ($siteInfo->com_logo != '')
-                                <img src="{{ asset('public/site-img/' . $siteInfo->com_logo) }}" width="160px"
+                                <img src="{{ asset('/site-img/' . $siteInfo->com_logo) }}" width="160px"
                                     alt="{{ $siteInfo->com_name }}">
                             @else
                                 <span>{{ $siteInfo->com_name }}</span>
@@ -37,16 +37,16 @@
                                     href="{{ url('/') }}">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link @if (Request::path() == 'services') active @endif"
-                                    href="{{ url('services') }}">Our Services</a>
+                                <a class="nav-link @if (Request::path() == 'service') active @endif"
+                                    href="{{ url('service') }}">Our Services</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link @if (Request::path() == 'agents') active @endif"
-                                    href="{{ url('agents') }}">Our Team</a>
+                                <a class="nav-link @if (Request::path() == 'agent') active @endif"
+                                    href="{{ url('agent') }}">Our Team</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link @if (Request::path() == 'gallery') active @endif"
-                                    href="{{ url('gallery') }}">Gallery</a>
+                                <a class="nav-link @if (Request::path() == 'galleries') active @endif"
+                                    href="{{ url('galleries') }}">Gallery</a>
                             </li>
                             @php $pages = site_pages(); @endphp
                             @foreach ($pages as $page)
@@ -101,7 +101,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
                         <div class="footer-widget">
                             @if (settings()->com_logo != '')
-                                <img class="mb-2" src="{{ asset('public/site-img/' . settings()->com_logo) }}"
+                                <img class="mb-2" src="{{ asset('/site-img/' . settings()->com_logo) }}"
                                     alt="{{ settings()->com_name }}" width="180px">
                             @else
                                 <h5 class="logo text-uppercase mb-4"><a href="#">{{ settings()->com_name }}</a>
@@ -161,8 +161,8 @@
                             <h6>Gallery</h6>
                             <div class="footer-gallery" id="footergallery">
                                 @foreach ($gallery as $g_image)
-                                    <a href="{{ asset('public/gallery/' . $g_image->image) }}"><img
-                                            src="{{ asset('public/gallery/' . $g_image->image) }}" alt=""></a>
+                                    <a href="{{ asset('/gallery/' . $g_image->image) }}"><img
+                                            src="{{ asset('/gallery/' . $g_image->image) }}" alt=""></a>
                                 @endforeach
                             </div>
                         </div>

@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pay with Stripe</title>
-    <link rel="stylesheet" href="{{ asset('public/assets/public/css/bootstrap5.0.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/public/css/bootstrap5.0.min.css') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('public/assets/public/css/style.css') }}">
-    <script src="{{ asset('public/assets/public/js/jquery.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('/assets/public/css/style.css') }}">
+    <script src="{{ asset('/assets/public/js/jquery.min.js') }}"></script>
     <script src="http://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
     <style>
         #wrapper {
@@ -32,7 +32,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="{{ asset('public/payment/stripe.png') }}" alt="">
+                    <img src="{{ asset('/payment/stripe.png') }}" alt="">
                 </div>
                 <div class="col-md-6">
                     <div class="card">

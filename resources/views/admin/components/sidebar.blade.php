@@ -4,7 +4,7 @@
     <a href="#" class="brand-link">
         @if($siteInfo->com_logo != '')
         <div class="bg-white text-center p-2">
-            <img src="{{asset('public/site-img/'.$siteInfo->com_logo)}}" alt="{{$siteInfo->com_name}}" height="60px">
+            <img src="{{asset('/site-img/'.$siteInfo->com_logo)}}" alt="{{$siteInfo->com_name}}" height="60px">
         </div>
         @else
             <span class="brand-text font-weight-bold">{{$siteInfo->com_name}}</span>

@@ -74,9 +74,9 @@
                                 </div>
                                 <div class="col-2 text-center">
                                     @if($gallery->image != '')
-                                    <img id="image" src="{{asset('public/gallery/'.$gallery->image)}}" alt="" width="100px" height="80px">
+                                    <img id="image" src="{{asset('/gallery/'.$gallery->image)}}" alt="" width="100px" height="80px">
                                     @else
-                                    <img id="image" src="{{asset('public/gallery/default.jpg')}}" alt="" width="100px" height="80px">
+                                    <img id="image" src="{{asset('/gallery/default.jpg')}}" alt="" width="100px" height="80px">
                                     @endif
                                 </div>
                                 <div class="col-md-12 col-12">

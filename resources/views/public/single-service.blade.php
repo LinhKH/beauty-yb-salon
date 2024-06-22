@@ -25,9 +25,9 @@
         <div class="row">
             <div class="col-md-3">
                 @if($service->service_image != '')
-                <img src="{{asset('public/services/'.$service->service_image)}}" alt="{{$service->title}}" width="100%">
+                <img src="{{asset('/services/'.$service->service_image)}}" alt="{{$service->title}}" width="100%">
                 @else
-                <img src="{{asset('public/services/default.jpg')}}" alt="{{$service->title}}" width="100%">
+                <img src="{{asset('/services/default.jpg')}}" alt="{{$service->title}}" width="100%">
                 @endif
             </div>
             <div class="col-md-9 service-box">
@@ -45,8 +45,8 @@
                 <h4 class="mt-5 mb-3">Images</h4>
                 <div class="service-images" id="servicegallery">
                     @for($i=0;$i<$images_count;$i++)
-                        <a href="{{asset('public/services/'.$images[$i])}}">
-                            <img src="{{asset('public/services/'.$images[$i])}}" alt="">
+                        <a href="{{asset('/services/'.$images[$i])}}">
+                            <img src="{{asset('/services/'.$images[$i])}}" alt="">
                         </a>
                     @endfor
                 </div>

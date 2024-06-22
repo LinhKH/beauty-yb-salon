@@ -22,9 +22,9 @@ class Yb_PaymentMethodController extends Controller
                 ->addIndexColumn()
                 ->editColumn('image', function($row){
                     if($row->payment_img != ''){
-                        $img = '<img src="'.asset("public/payment/".$row->payment_img).'" width="100px">';
+                        $img = '<img src="'.asset("/payment/".$row->payment_img).'" width="100px">';
                     }else{
-                        $img = '<img src="'.asset("public/payment/").'" width="100px">';
+                        $img = '<img src="'.asset("/payment/").'" width="100px">';
                     }
                     return $img;
                 })

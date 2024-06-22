@@ -23,7 +23,7 @@
                 <input type="radio" name="agent" @if ($agent->booked == '1') disabled @endif
                     value="{{ $agent->id }}" id="agent{{ $agent->id }}">
                 <label for="agent{{ $agent->id }}">
-                    <img src="{{ asset('public/agents/' . $agent->agent_image) }}" alt="">
+                    <img src="{{ asset('/agents/' . $agent->agent_image) }}" alt="">
                     <span>{{ $agent->name }}</span>
                 </label>
             </li>
@@ -35,7 +35,7 @@
             <li>
                 <input type="radio" name="agent" value="0" checked id="agent0">
                 <label for="agent0">
-                    <img src="{{ asset('public/agents/default.png') }}" alt="">
+                    <img src="{{ asset('/agents/default.png') }}" alt="">
                     <span>Any Agent</span>
                 </label>
             </li>

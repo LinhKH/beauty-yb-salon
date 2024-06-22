@@ -4,7 +4,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
                 <div class="footer-widget">
                     @if(settings()->com_logo != '')
-                        <img class="mb-2" src="{{asset('public/site-img/'.settings()->com_logo)}}" alt="{{settings()->com_name}}" width="100px">
+                        <img class="mb-2" src="{{asset('/site-img/'.settings()->com_logo)}}" alt="{{settings()->com_name}}" width="100px">
                     @else
                         <h5 class="logo text-uppercase mb-4"><a href="#">{{settings()->com_name}}</a></h5>
                     @endif
@@ -72,12 +72,12 @@
     </div>
 </footer>
 </div>
-<script src="{{asset('public/assets/public/js/jquery.min.js')}}"></script>
-<script src="{{asset('public/assets/public/js/bootstrap5.0.2.min.js')}}"></script>
+<script src="{{asset('/assets/public/js/jquery.min.js')}}"></script>
+<script src="{{asset('/assets/public/js/bootstrap5.0.2.min.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.2.4/swiper-bundle.min.js"></script>
-<script src="{{asset('public/assets/public/js/sweetalert2.min.js')}}"></script>
-<script src="{{asset('public/assets/public/js/jquery.validate.min.js')}}"></script>
-<script src="{{asset('public/assets/public/js/action.js')}}"></script>
+<script src="{{asset('/assets/public/js/sweetalert2.min.js')}}"></script>
+<script src="{{asset('/assets/public/js/jquery.validate.min.js')}}"></script>
+<script src="{{asset('/assets/public/js/action.js')}}"></script>
 <input type="hidden" class="base-url" value="{{url('/')}}"></input>
 </body>
 </html>

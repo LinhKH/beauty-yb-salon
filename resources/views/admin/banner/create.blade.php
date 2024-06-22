@@ -25,7 +25,7 @@
                                             <label class="col-md-3">Banner Image</label>
                                             <div class="col-md-9">
                                                 <input type="file" hidden class="change-com-img" name="image" onChange="readURL(this);">
-                                                <img class="img-thumbnail" id="image" src="{{asset('public/banner/default.jpg')}}" width="150px" height="150px">
+                                                <img class="img-thumbnail" id="image" src="{{asset('/banner/default.jpg')}}" width="150px" height="150px">
                                                 <button type="button" class="btn btn-info d-block mt-2 change-logo">Change</button>
                                             </div>
                                         </div>

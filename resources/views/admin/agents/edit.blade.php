@@ -45,9 +45,9 @@
                                 </div>
                                 <div class="col-2 text-center">
                                     @if($agent->agent_image != '')
-                                    <img id="image" src="{{asset('public/agents/'.$agent->agent_image)}}" alt="" width="100px" height="80px">
+                                    <img id="image" src="{{asset('/agents/'.$agent->agent_image)}}" alt="" width="100px" height="80px">
                                     @else
-                                    <img id="image" src="{{asset('public/agents/default.png')}}" alt="" width="100px" height="80px">
+                                    <img id="image" src="{{asset('/agents/default.png')}}" alt="" width="100px" height="80px">
                                     @endif
                                 </div>
                                 <!-- <div class="col-10">
@@ -62,9 +62,9 @@
                                 </div>
                                 <div class="col-2 text-center">
                                     @if($agent->agent_image != '')
-                                    <img id="image" src="{{asset('public/agents/'.$agent->agent_image)}}" alt="" width="100px" height="80px">
+                                    <img id="image" src="{{asset('/agents/'.$agent->agent_image)}}" alt="" width="100px" height="80px">
                                     @else
-                                    <img id="image" src="{{asset('public/agents/default.png')}}" alt="" width="100px" height="80px">
+                                    <img id="image" src="{{asset('/agents/default.png')}}" alt="" width="100px" height="80px">
                                     @endif
                                 </div> -->
                                 <div class="col-md-4 col-12">

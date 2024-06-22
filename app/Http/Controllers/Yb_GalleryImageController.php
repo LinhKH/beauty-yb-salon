@@ -25,12 +25,12 @@ class Yb_GalleryImageController extends Controller
                 ->addColumn('image',function($row){
                     if($row->image != ''){
                         $img = '<div class="d-flex flex-row">
-                                    <img src="'.asset("public/gallery/".$row->image).'" class="mr-2" width="70px">
+                                    <img src="'.asset("/gallery/".$row->image).'" class="mr-2" width="70px">
                                     <span class="align-self-center">'.$row->title.'</span>
                                 </div>';
                     }else{
                         $img = '<div class="d-flex flex-row">
-                                    <img src="'.asset("public/gallery/default.jpg").'" class="mr-2" width="70px">
+                                    <img src="'.asset("/gallery/default.jpg").'" class="mr-2" width="70px">
                                     <span class="align-self-center">'.$row->title.'</span>
                                 </div>';
                     }

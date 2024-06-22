@@ -41,9 +41,9 @@
                                 </div>
                                 <div class="col-md-3 text-right">
                                     @if($service->service_image != '')
-                                    <img id="image" src="{{asset('public/services/'.$service->service_image)}}" alt="" width="80px" height="80px">
+                                    <img id="image" src="{{asset('/services/'.$service->service_image)}}" alt="" width="80px" height="80px">
                                     @else
-                                    <img id="image" src="{{asset('public/services/default.jpg')}}" alt="" width="80px" height="80px">
+                                    <img id="image" src="{{asset('/services/default.jpg')}}" alt="" width="80px" height="80px">
                                     @endif
                                 </div>
                             </div>
@@ -120,7 +120,7 @@
 $gallery = array_filter(explode(',',$service->images));
 $gallery_array = [];
 for($i=0;$i<count($gallery);$i++){
-    $g = (object) array('id'=>$i+1,'src'=>asset('public/services/'.$gallery[$i]));
+    $g = (object) array('id'=>$i+1,'src'=>asset('/services/'.$gallery[$i]));
     array_push($gallery_array,$g);
 }
 

@@ -35,12 +35,12 @@ class Yb_ServiceController extends Controller
                 ->addColumn('service_image',function($row){
                     if($row->service_image != ''){
                         $img = '<div class="d-flex flex-row">
-                                    <img src="'.asset("public/services/".$row->service_image).'" class="mr-2" width="70px">
+                                    <img src="'.asset("/services/".$row->service_image).'" class="mr-2" width="70px">
                                     <span class="align-self-center">'.$row->title.'</span>
                                 </div>';
                     }else{
                         $img = '<div class="d-flex flex-row">
-                                    <img src="'.asset("public/services/default.jpg").'" class="mr-2" width="70px">
+                                    <img src="'.asset("/services/default.jpg").'" class="mr-2" width="70px">
                                     <span class="align-self-center">'.$row->title.'</span>
                                 </div>';
                     }

@@ -2,7 +2,7 @@
     <div class="swiper">
         <div class="swiper-wrapper">
             @foreach($banner as $banner)
-            <div class="swiper-slide" style="background-image:url({{asset('public/banner/'.$banner->banner_image)}})">
+            <div class="swiper-slide" style="background-image:url({{asset('/banner/'.$banner->banner_image)}})">
                 <div class="banner-content mt-auto">
                     <h1>{{$banner->title}}</h1>
                     @if($banner->sub_title != '')<h4>{{$banner->sub_title}}</h4> @endif

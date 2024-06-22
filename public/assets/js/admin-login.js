@@ -3,6 +3,7 @@ $(function () {
     var origin = window.location.origin;
     var path = window.location.pathname.split( '/' );
     var uRL = origin+'/'+path[1]+'/';
+    alert(uRL)
 
     var Toast = Swal.mixin({
         toast: true,
@@ -24,7 +25,7 @@ $(function () {
             var url = $('.url').val();
             var formdata = new FormData(form);
             $.ajax({
-                url: uRL+'admin',
+                url: uRL,
                 type: 'POST',
                 data: formdata,
                 processData: false,

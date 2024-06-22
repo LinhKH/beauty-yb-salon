@@ -31,9 +31,9 @@
                                                 <input type="hidden" class="custom-file-input" name="old_image" value="{{$banner->banner_image}}" />
                                                 <input type="file" hidden class="change-com-img" name="image" onChange="readURL(this);">
                                                 @if($banner->banner_image != '')
-                                                    <img class="img-thumbnail" id="image" src="{{asset('public/banner/'.$banner->banner_image)}}" width="150px" height="150px">
+                                                    <img class="img-thumbnail" id="image" src="{{asset('/banner/'.$banner->banner_image)}}" width="150px" height="150px">
                                                 @else
-                                                    <img class="img-thumbnail" id="image" src="{{asset('public/banner/default.jpg')}}" width="150px" height="150px">
+                                                    <img class="img-thumbnail" id="image" src="{{asset('/banner/default.jpg')}}" width="150px" height="150px">
                                                 @endif 
                                                 <button type="button" class="btn btn-info d-block mt-2 change-logo">Change</button>
                                             </div>

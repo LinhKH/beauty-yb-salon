@@ -19,7 +19,7 @@ use App\Http\Controllers\Yb_BannerController;
 
 Route::group(['middleware' => 'protectedPage'], function () {
     // Route::post('/',[Yb_AdminController::class,'yb_index']);
-    Route::any('/admin', [Yb_AdminController::class, 'yb_index']);
+    Route::any('admin', [Yb_AdminController::class, 'yb_index']);
     Route::get('admin/logout', [Yb_AdminController::class, 'yb_logout']);
     Route::get('admin/dashboard', [Yb_AdminController::class, 'yb_dashboard']);
     Route::post('admin/appointment/get-service-row', [Yb_AppointmentController::class, 'get_service_row']);
@@ -54,11 +54,11 @@ Route::group(['middleware' => 'protectedPage'], function () {
 
 Route::get('/', [Yb_HomeController::class, 'index']);
 Route::post('get-clients', [Yb_HomeController::class, 'yb_get_service_agents']);
-Route::any('/services', [Yb_HomeController::class, 'yb_all_services']);
+Route::any('/service', [Yb_HomeController::class, 'yb_all_services']);
 Route::get('/service/{slug}', [Yb_HomeController::class, 'yb_single_service']);
 Route::post('/show-newClient-services', [Yb_HomeController::class, 'yb_show_newClient_services']);
-Route::get('agents', [Yb_HomeController::class, 'yb_all_agents']);
-Route::get('gallery', [Yb_HomeController::class, 'yb_all_gallery']);
+Route::get('agent', [Yb_HomeController::class, 'yb_all_agents']);
+Route::get('galleries', [Yb_HomeController::class, 'yb_all_gallery']);
 Route::get('gallery/{slug}', [Yb_HomeController::class, 'yb_category_gallery']);
 Route::get('contact', [Yb_HomeController::class, 'yb_contact']);
 Route::post('contact', [Yb_HomeController::class, 'yb_contactStore']);

@@ -32,9 +32,9 @@
                                                 <input type="hidden" class="custom-file-input" name="old_logo" value="{{$item->com_logo}}" />
                                                 <input type="file" hidden class="change-com-img" name="logo" onChange="readURL(this);">
                                                 @if(empty($item->com_logo))
-                                                    <img class="img-thumbnail" id="image" src="{{asset('public/site-img/default.jpg')}}" width="150px" height="150px">
+                                                    <img class="img-thumbnail" id="image" src="{{asset('/site-img/default.jpg')}}" width="150px" height="150px">
                                                 @else
-                                                    <img class="img-thumbnail" id="image" src="{{asset('public/site-img/'.$item->com_logo)}}" width="150px" height="150px">
+                                                    <img class="img-thumbnail" id="image" src="{{asset('/site-img/'.$item->com_logo)}}" width="150px" height="150px">
                                                 @endif
                                                 <button type="button" class="btn btn-info d-block mt-2 change-logo">Change</button>
                                             </div>

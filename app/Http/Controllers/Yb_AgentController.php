@@ -31,12 +31,12 @@ class Yb_AgentController extends Controller
                 ->addColumn('agent_image',function($row){
                     if($row->agent_image != ''){
                         $img = '<div class="d-flex flex-row">
-                                    <img src="'.asset("public/agents/".$row->agent_image).'" class="mr-2" width="70px">
+                                    <img src="'.asset("agents/".$row->agent_image).'" class="mr-2" width="70px">
                                     <span class="align-self-center">'.$row->name.'</span>
                                 </div>';
                     }else{
                         $img = '<div class="d-flex flex-row">
-                                    <img src="'.asset("public/agents/default.png").'" class="mr-2" width="70px">
+                                    <img src="'.asset("agents/default.png").'" class="mr-2" width="70px">
                                     <span class="align-self-center">'.$row->name.'</span>
                                 </div>';
                     }

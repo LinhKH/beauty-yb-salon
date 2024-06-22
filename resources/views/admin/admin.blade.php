@@ -4,10 +4,10 @@
     <title>{{$siteInfo->com_name}}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{asset('public/assets/fontawesome-free/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/assets/fontawesome-free/css/all.min.css')}}">
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{asset('public/assets/css/adminlte.min.css')}}">
-    <link rel="stylesheet" href="{{asset('public/assets/css/sweetalert-bootstrap-4.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/assets/css/adminlte.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/assets/css/sweetalert-bootstrap-4.min.css')}}">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 </head>
@@ -15,7 +15,7 @@
     <div class="login-box">
         @if($siteInfo->com_logo != '')
             <div class="login-logo">
-                <img src="{{asset('public/site-img/'.$siteInfo->com_logo)}}" alt="" width="200px" >
+                <img src="{{asset('/site-img/'.$siteInfo->com_logo)}}" alt="" width="200px" >
             </div>
             @else
             <h3 class="text-center">{{$siteInfo->com_name}}</h3>
@@ -62,12 +62,12 @@
     </div>
     <!-- /.login-box -->
     <!-- jQuery UI 1.11.4 -->
-    <script src="{{asset('public/assets/js/jquery.min.js')}}"></script>
+    <script src="{{asset('/assets/js/jquery.min.js')}}"></script>
     <!-- jquery-validation -->
-    <script src="{{asset('public/assets/js/jquery.validate.min.js')}}"></script>
-    <script src="{{asset('public/assets/js/sweetalert2.min.js')}}"></script>
+    <script src="{{asset('/assets/js/jquery.validate.min.js')}}"></script>
+    <script src="{{asset('/assets/js/sweetalert2.min.js')}}"></script>
    
-    <script src="{{asset('public/assets/js/additional-methods.min.js')}}"></script>
-    <script src="{{asset('public/assets/js/admin-login.js')}}"></script>
+    <script src="{{asset('/assets/js/additional-methods.min.js')}}"></script>
+    <script src="{{asset('/assets/js/admin-login.js')}}"></script>
 </body>
 </html>

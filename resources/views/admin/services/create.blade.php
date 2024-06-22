@@ -36,7 +36,7 @@
                                     <label class="custom-file-label">Choose file</label>
                                 </div>
                                 <div class="col-md-3 text-right">
-                                    <img id="image" src="{{asset('public/services/default.jpg')}}" alt=""  width="80px" height="80px">
+                                    <img id="image" src="{{asset('/services/default.jpg')}}" alt=""  width="80px" height="80px">
                                 </div>
                             </div>
                             <div class="row">

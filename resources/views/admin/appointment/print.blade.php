@@ -28,7 +28,7 @@
                                 <button class="btn btn-success" onclick="PrintDiv();"><i class="fa fa-print"></i></button>
                                 <div class="print-box">
                                     <div class="invoice-head">
-                                        <img src="{{ asset('public/site-img/' . $siteInfo->com_logo) }}" alt=""
+                                        <img src="{{ asset('/site-img/' . $siteInfo->com_logo) }}" alt=""
                                             width="150px">
                                         <h3>{{ $siteInfo->com_name }}</h3>
                                         <ul>

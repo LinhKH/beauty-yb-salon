@@ -131,7 +131,7 @@
                             <li>
                                 <input type="radio" id="{{$pay_method->payment_name}}" name="pay_method" value="{{strtolower($pay_method->payment_name)}}" @if($i==1) checked @endif required>
                                 <label for="{{$pay_method->payment_name}}">
-                                    <img src="{{asset('public/payment/'.$pay_method->payment_img)}}">
+                                    <img src="{{asset('/payment/'.$pay_method->payment_img)}}">
                                 </label>
                                 
                                 <input type="text" hidden name="razor_payid" value="">

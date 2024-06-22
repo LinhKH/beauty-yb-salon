@@ -23,9 +23,9 @@ class Yb_BannerController extends Controller
                 ->addIndexColumn()
                 ->addColumn('banner_image',function($row){
                     if($row->banner_image != ''){
-                        $img = '<img src="'.asset("public/banner/".$row->banner_image).'" width="70px">';
+                        $img = '<img src="'.asset("/banner/".$row->banner_image).'" width="70px">';
                     }else{
-                        $img = '<img src="'.asset("public/banner/default.jpg").'"  width="70px">';
+                        $img = '<img src="'.asset("/banner/default.jpg").'"  width="70px">';
                     }
                     return $img;
                 })

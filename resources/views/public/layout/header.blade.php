@@ -8,11 +8,11 @@
     <title>{{settings()->com_name}}</title>
      <!--Bbootstrap 5 -->
     <link rel="stylesheet" href="{{asset('assets/public/css/sweetalert-bootstrap-4.min.css')}}">
-    <link rel="stylesheet" href="{{asset('public/assets/public/css/bootstrap5.0.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/assets/public/css/bootstrap5.0.min.css')}}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
-    <link rel="stylesheet" href="{{asset('public/assets/public/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('/assets/public/css/style.css')}}">
 </head>
 <body>
 <div id="wrapper">

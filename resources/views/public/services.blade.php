@@ -28,9 +28,9 @@
                     <div class="service-img">
                         <a href="{{url('service/'.$item->slug)}}">
                         @if($item->service_image != '')
-                        <img src="{{asset('public/services/'.$item->service_image)}}" alt="{{$item->title}}">
+                        <img src="{{asset('/services/'.$item->service_image)}}" alt="{{$item->title}}">
                         @else
-                        <img src="{{asset('public/services/default.jpg')}}" alt="{{$item->title}}">
+                        <img src="{{asset('/services/default.jpg')}}" alt="{{$item->title}}">
                         @endif
                         </a>
                     </div>

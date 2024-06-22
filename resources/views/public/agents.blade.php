@@ -26,9 +26,9 @@
                 <div class="team-info">
                     <div class="team-img">
                         @if($item->agent_image != '')
-                        <img src="{{asset('public/agents/'.$item->agent_image)}}" alt="{{$item->name}}">
+                        <img src="{{asset('/agents/'.$item->agent_image)}}" alt="{{$item->name}}">
                         @else
-                        <img src="{{asset('public/agents/default.png')}}" alt="{{$item->name}}">
+                        <img src="{{asset('/agents/default.png')}}" alt="{{$item->name}}">
                         @endif
                     </div>
                     <div class="team-detail">

@@ -15,9 +15,9 @@
                     <div class="service-img">
                         <a href="{{url('service/'.$item->slug)}}">
                         @if($item->service_image != '')
-                        <img src="{{asset('public/services/'.$item->service_image)}}" alt="{{$item->title}}">
+                        <img src="{{asset('/services/'.$item->service_image)}}" alt="{{$item->title}}">
                         @else
-                        <img src="{{asset('public/services/default.jpg')}}" alt="{{$item->title}}">
+                        <img src="{{asset('/services/default.jpg')}}" alt="{{$item->title}}">
                         @endif
                         </a>
                     </div>
@@ -58,9 +58,9 @@
                     <div class="team-info">
                         <div class="team-img">
                             @if($item->agent_image != '')
-                            <img src="{{asset('public/agents/'.$item->agent_image)}}" alt="{{$item->name}}">
+                            <img src="{{asset('/agents/'.$item->agent_image)}}" alt="{{$item->name}}">
                             @else
-                            <img src="{{asset('public/agents/default.png')}}" alt="{{$item->name}}">
+                            <img src="{{asset('/agents/default.png')}}" alt="{{$item->name}}">
                             @endif
                         </div>
                         <div class="team-detail">
